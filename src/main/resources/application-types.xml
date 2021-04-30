@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="timezones" format="json">
+      <types:shape format="weave" example="examples/timezonesresult.json"><![CDATA[%dw 2.0
+
+type timezones = {|
+  abbreviation: String, 
+  client_ip: String, 
+  datetime: String, 
+  day_of_week: Number {"typeId": "int"}, 
+  day_of_year: Number {"typeId": "int"}, 
+  dst: Boolean, 
+  dst_from: String, 
+  dst_offset: Number {"typeId": "int"}, 
+  dst_until: String, 
+  raw_offset: Number {"typeId": "int"}, 
+  timezone: String, 
+  unixtime: Number {"typeId": "int"}, 
+  utc_datetime: String, 
+  utc_offset: String, 
+  week_number: Number {"typeId": "int"}
+|} {"example": "{\\\"abbreviation\\\":\\\"BST\\\",\\\"client_ip\\\":\\\"107.210.166.72\\\",\\\"datetime\\\":\\\"2021-04-15T19:38:24.492924+01:00\\\",\\\"day_of_week\\\":4,\\\"day_of_year\\\":105,\\\"dst\\\":true,\\\"dst_from\\\":\\\"2021-03-28T01:00:00+00:00\\\",\\\"dst_offset\\\":3600,\\\"dst_until\\\":\\\"2021-10-31T01:00:00+00:00\\\",\\\"raw_offset\\\":0,\\\"timezone\\\":\\\"Europe\\/London\\\",\\\"unixtime\\\":1618511904,\\\"utc_datetime\\\":\\\"2021-04-15T18:38:24.492924+00:00\\\",\\\"utc_offset\\\":\\\"+01:00\\\",\\\"week_number\\\":15}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#0c4eb5b5-141d-4783-8152-509b1b8b0868">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="timezones"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

@@ -1,0 +1,17 @@
+{
+    "abbreviation": "BST",
+    "client_ip": "107.210.166.72",
+    "datetime": "2021-04-15T19:38:24.492924+01:00",
+    "day_of_week": 4,
+    "day_of_year": 105,
+    "dst": true,
+    "dst_from": "2021-03-28T01:00:00+00:00",
+    "dst_offset": 3600,
+    "dst_until": "2021-10-31T01:00:00+00:00",
+    "raw_offset": 0,
+    "timezone": "Europe/London",
+    "unixtime": 1618511904,
+    "utc_datetime": "2021-04-15T18:38:24.492924+00:00",
+    "utc_offset": "+01:00",
+    "week_number": 15
+}
